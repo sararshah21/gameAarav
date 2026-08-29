@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#17203e" />
+    <title>Turbo Trails — Endless Kart Runner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="game-frame" aria-label="Turbo Trails game">
+        <canvas id="game" aria-label="Turbo Trails game canvas"></canvas>
+        <div class="hud hidden" id="hud">
+          <div class="hud-top"><div class="brand-mini"><i></i>TURBO TRAILS</div><div class="speed-pill" id="speed">⚡ 1.0x</div></div>
+          <div class="stat-row">
+            <div class="stat score"><span>SCORE</span><strong id="score">000000</strong></div>
+            <div class="stat coins"><span>COINS</span><strong>✦ <b id="coins">00</b></strong></div>
+            <div class="stat combo"><span>COMBO</span><strong id="combo">x1</strong></div>
+          </div>
+          <div class="hud-bottom"><div class="hearts" id="hearts">♥ ♥ ♥</div><div class="mission"><small>MISSION</small><b id="mission">Collect 30 sparks</b><em id="mission-progress">0 / 30</em></div></div>
+          <div class="powerup hidden" id="powerup">🛡 SHIELD READY</div>
+        </div>
+        <div class="overlay" id="menu">
+          <div class="menu-card">
+            <div class="eyebrow">★ AN ENDLESS KART ADVENTURE ★</div>
+            <h1>TURBO<br /><span>TRAILS</span></h1>
+            <div class="hero-kart" aria-hidden="true"><div class="hero-driver"></div><div class="hero-body"></div><div class="hero-wheel left"></div><div class="hero-wheel right"></div></div>
+            <p class="tagline">Dodge the wild. Catch the spark.</p>
+            <button class="primary" id="play">PLAY NOW <span>▶</span></button>
+            <button class="text-button" id="howto">HOW TO PLAY</button>
+            <div class="menu-footer"><div><small>BEST SCORE</small><b id="best-score">0</b></div><div><small>BEST SPARKS</small><b id="best-coins">0</b></div></div>
+          </div>
+        </div>
+        <div class="overlay howto hidden" id="instructions"><div class="panel"><button class="close" data-close="instructions">×</button><div class="eyebrow">THE BASICS</div><h2>RIDE LIKE LIGHTNING</h2><div class="controls"><div><kbd>←</kbd><kbd>→</kbd><span>SWITCH LANES</span></div><div><kbd>SPACE</kbd><span>JUMP &amp; SOAR</span></div></div><p>Collect sparks, dodge trouble, and hold your combo. Pick up a shield to blast through one hit!</p><button class="primary" data-close="instructions">GOT IT!</button></div></div>
+        <div class="overlay countdown hidden" id="countdown"><div id="count-number">3</div></div>
+        <div class="overlay gameover hidden" id="gameover"><div class="panel"><div class="crash">✹</div><div class="eyebrow">RIDE COMPLETE</div><h2>TRAIL'S END!</h2><p class="new-best hidden" id="new-best">★ NEW HIGH SCORE! ★</p><div class="results"><div><small>SCORE</small><b id="final-score">0</b></div><div><small>SPARKS</small><b id="final-coins">0</b></div><div><small>BEST</small><b id="final-best">0</b></div></div><button class="primary" id="again">RIDE AGAIN <span>↻</span></button><button class="text-button" id="main-menu">MAIN MENU</button></div></div>
+      </section>
+      <p class="footer-tip">← → / A D to steer &nbsp;•&nbsp; SPACE to jump</p>
+    </main>
+    <script type="module" src="./game.js"></script>
+  </body>
+</html>
